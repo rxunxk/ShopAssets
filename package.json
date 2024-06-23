@@ -23,7 +23,16 @@
   "cds": {
     "requires": {
       "auth": "xsuaa",
-      "db": "hana"
+      "db": {
+        "kind": "sqlite",
+        "[production]": {
+          "kind": "hana"
+        },
+        "model": [
+          "db",
+          "srv"
+        ]
+      }
     }
   }
 }

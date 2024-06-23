@@ -1,6 +1,19 @@
 {
+  "xsappname": "ShopAssets",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+
   "scopes": [],
   "attributes": [],
   "role-templates": [],
-  "authorities-inheritance": false
+  
+  "oauth2-configuration": {
+    "token-validity": 86400,
+    "refresh-token-validity": 2592000,
+    "redirect-uris": [
+      "https://**.hana.ondemand.com/**",
+      "https://**.applicationstudio.cloud.sap/**",
+      "http://localhost:5000/login/callback"
+    ]
+  }
 }

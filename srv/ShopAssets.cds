@@ -4,4 +4,5 @@ service ShopAssets {
 
     entity Products as projection on db.Products;
 
+    function runFun() returns String;
 }
