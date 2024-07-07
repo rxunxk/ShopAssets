@@ -27,6 +27,7 @@ modules:
     requires:
       - name: ShopAssets-auth
       - name: ShopAssets-db
+      - name: ShopAssets-destination
 
   - name: ShopAssets-db-deployer
     type: hdb
@@ -67,3 +68,8 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: ShopAssets-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite

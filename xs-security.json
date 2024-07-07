@@ -1,34 +1,30 @@
 {
   "xsappname": "ShopAssets",
   "tenant-mode": "dedicated",
-  "description": "Security profile of called application",
   "scopes": [
     {
-      "name": "uaa.user",
-      "description": "UAA"
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin"
     }
   ],
+  "attributes": [],
   "role-templates": [
     {
-      "name": "Token_Exchange",
-      "description": "UAA",
-      "scope-references": ["uaa.user"]
+      "name": "Admin",
+      "description": "Role Template created for Admin for Shop Assests app",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ],
+      "attribute-references": []
     }
   ],
   "oauth2-configuration": {
-    "token-validity": 86400,
-    "refresh-token-validity": 2592000,
-    "redirect-uris": [
-      "https://**.hana.ondemand.com/**",
-      "https://**.applicationstudio.cloud.sap/**",
-      "http://localhost:5000/login/callback"
-    ],
     "credential-types": [
-      "binding-secret",
-      "x509"
+        "binding-secret",
+        "x509"
     ],
-    "allowedIdentityProviders": [
-      "sap.custom"
+    "redirect-uris": [
+        "https://*.applicationstudio.cloud.sap/**"
     ]
-  }
+}
 }
